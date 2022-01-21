@@ -2,9 +2,8 @@ import React, {useState} from "react";
 import { Card, Button } from "semantic-ui-react";
 
 
-function Cart( {cart , user } ){
+function Cart( {cart , user, setCart } ){
     
-  const [empty, setEmptyCart] = useState(null);
 
   function showCart(){
             
@@ -17,16 +16,15 @@ function Cart( {cart , user } ){
    
     function handleClick(){
       
-      fetch("/orders",{
+      fetch(`/orders/${cart.id}`,{
         method:"PATCH",
         headers:{'Content-Type': 'application/json'},
         body: JSON.stringify({
-            purchase: true,
-            user_id: user.id,
+            purchase: true
     })
   })
     .then(resp => resp.json())
-    .then(resp => console.log(resp))
+    .then(resp => setCart(null))
     }
 
     

@@ -35,7 +35,7 @@ function App() {
        <GetDrink user = {user} setCart = {setCart}/>  
        </Route> 
        <Route path='/Cart'> 
-      <Cart cart = {cart} user = {user} />
+      <Cart cart = {cart} user = {user} setCart ={setCart} />
       </Route>  
       </Switch>     
 
