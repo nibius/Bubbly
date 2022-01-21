@@ -27,7 +27,9 @@ return(
         Drink name: {name},  
         Price: ${price} 
     </Card>
-    <Button class="a" onClick={handleClick}> Add to Cart </Button>
+    <Button>
+    <button id="a" onClick={handleClick}> Add to Cart </button>
+    </Button>
     </>
 
 )
@@ -37,15 +39,21 @@ return(
 
 export default DrinkCard;
 
-const Button = styled.button`
-font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px;
-  border-radius: none;
+const Button = styled.div`
+  padding-top: 10px;
 
-.a:hover{
-    background-color:black;
+#a{
+    box-sizing: border-box;
+        padding:10px;
+        float:left;
+        border: 5px solid  #feffdf;
+        border-radius:10px;
+        background:white;
+}
+
+
+#a:hover{
+    background-color:gray;
 }
 
 `

@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-
+import styled from 'styled-components'
 
 function LoginForm ( {setUser, handleFormDisplay} ) {
 
@@ -34,8 +34,8 @@ function LoginForm ( {setUser, handleFormDisplay} ) {
         }
     
 return(
-    <>
-        <form className = "signup" onSubmit={handleSubmit}>
+    <StyleForm>
+        <form id="signup" onSubmit={handleSubmit}>
             <h3>Log in</h3>
         <label htmlFor="username">Username:</label>
           <input
@@ -45,7 +45,7 @@ return(
               value={formData.username}
               onChange={handleChange}
           />
-
+      <br></br>
         <label htmlFor="password">Password:</label>
           <input
               id="password"
@@ -54,12 +54,11 @@ return(
               value={formData.password}
               onChange={handleChange}
               />
+          <br></br>  
        <button className="btn" type= "submit">Login</button>
-
+       <button className="btn" onClick={handleFormDisplay}> Dont have an account? </button>    
         </form>
-
-<button onClick={handleFormDisplay}> Dont have an account? </button>    
-</>
+</StyleForm>
    
 )
 
@@ -67,3 +66,53 @@ return(
 }
 
 export default LoginForm;
+
+const StyleForm = styled.div ` 
+
+
+      #signup{
+       padding-top:200px;
+       align-items:center;
+       justify-content: space-between;
+       margin-bottom:5px;
+       height:20px;
+       width:200px;
+    }
+
+    #username{
+      box-sizing: border-box;
+      padding:4px;
+      align-items:center;
+    }
+    
+    #password{
+      box-sizing: border-box;
+      padding:4px;
+      align-items:center;
+    }
+    
+    input[type=text]:focus {
+        background: #feffdf;
+    }
+    input[type=password]:focus {
+        background: #feffdf;
+    }
+
+
+    .btn{
+        box-sizing: border-box;
+        padding:10px;
+        float:left;
+        border: 5px solid  #feffdf;
+        border-radius:10px;
+        background:white;
+    }
+    
+    .btn:hover{
+        background:#3e4a61;
+        }
+
+       
+
+
+`
